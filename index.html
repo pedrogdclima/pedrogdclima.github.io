@@ -2,72 +2,89 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>pedrogdclima</title>
-    <!-- <link href="personal_website.css" rel="stylesheet"> -->
-    <link href="claude_stylesheet.css" rel="stylesheet">
-    <script type="module" src="javascripts/interface.js"></script>
+    <link rel="stylesheet" href="custom_bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="javascripts/interface.js"></script>
   </head>
   <body>
-    <nav>
-    </nav>
-    <div class="hero">
-      <h1>Pedro Goncalves Dias Correia de Lima</h1>
-    </div>
-    <div class="container">
-      <section>
-        <p>Welcome to my personal website. It is a work in progress and will hopefully come to showcase my abilities. Visit often!</p>
-      </section>
-      <section>
-        <h2>Learning Software Development</h2>
-        <h3 class="section-subtitle">Launch School</h3>
-        <div class="card-grid">
-          <h4 id="curriculum">Curriculum</h4>
-          <div class="card">
-            <p>*Back-end Development*</p>
-            <ul>
-              <li>RB101 Programming Foundations with Ruby: Basics</li>
-              <li>RB109	Assessment: Programming Foundations with Ruby: Basics</li>
-              <li>RB110	Programming Foundations with Ruby: Intermediate</li>
-              <li>RB119	Assessment: Programming Foundations with Ruby: Intermediate</li>
-              <li>RB120	Object Oriented Programming</li>
-              <li>RB129	Assessment: Object Oriented Programming</li>
-              <li>RB130	Ruby Foundations: More Topics</li>
-              <li>RB139	Assessment: Ruby Foundations More Topics</li>
-              <li>LS170	Networking Foundations</li>
-              <li>LS171	Assessment: Networking Foundations</li>
-              <li>RB175	Networked Applications</li>
-              <li>LS180	Database Foundations</li>
-              <li>LS181	Assessment: Database Foundations</li>
-              <li>RB185	Database Applications</li>
-              <li>RB189	Assessment: Networked and Database Applications with Ruby</li>
-            </ul>
+    <section class="hero has-text-centered is-medium">
+      <div class="hero-body">
+        <p class="title is-1">Pedro Lima</p>
+        <p class="subtitle">Full-Stack Software Developer</p>
+      </div>
+    </section>
+    <section>
+      <div class="container tabs is-centered is-large">
+        <ul id="tab-links">
+          <li class="is-active"><a id="about">About</a></li>
+          <li><a id="projects">Projects</a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="about" class="section">
+      <div class="container is-size-5">
+        <p>A full-stack software engineer that enjoys tackling complex problems and developing a deep understanding of the tools and technologies of the trade. Brings strong stakeholder management and mentoring skills from previous experience as a bicycle mechanic and youth soccer coach. Attentive to the balance between owning one's own work and valuing collaboration.</p>
+        <p>When not on my computer you will find me playing soccer, cycling, photographing wildlife, or learning new skills like home renovations and playing the guitar.</p>
+      </div>
+    </section>
+    <section id="projects" class="section is-hidden">
+      <div class="container grid is-col-min-12 is-size-5">
+        <div class="cell card">
+          <div class="card-header">
+            <p class="card-header-title is-centered">Communitools</p>
           </div>
-          <div class="card">
-            <p>*Front-end Development</p>
-            <ul>
-              <li>LS202	HTML and CSS</li>
-              <li>JS210	Fundamentals of JavaScript for Programmers</li>
-              <li>JS211	Assessment: Fundamentals of JavaScript for Programmers</li>
-              <li>LS215	Computational Thinking and Problem Solving</li>
-              <li>LS216	Assessment: Computational Thinking and Problem Solving</li>
-              <li>JS225	Object Oriented JavaScript</li>
-              <li>JS229	Assessment: Object Oriented JavaScript</li>
-              <li>JS230	DOM Manipulation & Browser Events</li>
-              <li>JS235	Asynchronous JavaScript & APIs</li>
-              <li>JS239	Assessment: DOM & Asynchronous Programming with JavaScript</li>
-              <li>TS240	Introduction to TypeScript</li>
-              <li>TS249	Assessment: Introduction to TypeScript</li>
-              <li>LS250	Introduction to Data Structures and Algorithms</li>
-              <li>LS259	Assessment: Data Structures and Algorithms</li>
-            </ul>
+          <div class="card-content">
+            <div class="content">
+              A platform where users can signup, list tools they own and are willing to lend, and see what their neighbours have to offer. It uses a self reported location to determine which neighbours are nearby.
+            </div>
           </div>
         </div>
-      </section>
-    </div>
-    <h2>Future Projects</h2>
-      <ul>
-        <li>Wildlife Photography</li>
-        <li>Toronto's Ghost Bike Map</li>
-      </ul>
+        <div class="cell card">
+          <div class="card-header">
+            <p class="card-header-title is-centered">Where Are We?</p>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Web-based map game where you have to guess the city/location from topological features like roads, rivers, shorelines, releif, etc. Currently in the brainstorming phase, researching the project's feasibility.
+            </div>
+          </div>
+        </div>
+        <div class="cell card">
+          <div class="card-header">
+            <p class="card-header-title is-centered">All Related</p>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Interactive photo album to display my wildlife photography and allow users to see how different species are more or less related to each other. 
+            </div>
+          </div>
+        </div>
+        <div class="cell mb-5 card">
+          <div class="card-header">
+            <p class="card-header-title is-centered">Personal Website</p>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Simple website to showcase my work. Also an ongoing project I will use to improve my UI/UX design and try out different CSS frameworks.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer has-text-centered">
+      <div class="container layer">
+        <button class="icon is-large">
+          <a href="https://linkedin.com/in/pedro-gdc-lima"><i class="fab fa-linkedin fa-2x"></i></a>
+        </button>
+        <button class="icon is-large">
+          <a href="https://github.com/pedrogdclima"><i class="fab fa-github-square fa-2x"></i></a>
+        </button>
+      </div>
+      <div class="content">
+        <p>pedrogdcl@gmail.com</br>Toronto, ON, Canada</p>
+      </div>
+    </footer>
   </body>
 </html>

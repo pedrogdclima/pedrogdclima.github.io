@@ -1,18 +1,32 @@
 
-let curriculum;
+let sectionLinks;
+let activeLink;
 
 function main() {
-  curriculum = document.querySelector('#curriculum');
+  sectionLinks = document.querySelectorAll('#tab-links a');
+  setActiveLink();
   setupEventListeners();
 }
 
-function setupEventListeners() {
-  curriculum.addEventListener('click', handleCurriculumClick);
+function setActiveLink() {
+  activeLink = document.querySelector('.is-active');
 }
 
-function handleCurriculumClick(event) {
+function setupEventListeners() {
+  sectionLinks.forEach( link => {
+    link.addEventListener('click', handleTabClick);
+  })
+}
+
+function handleTabClick(event) {
   event.preventDefault();
-  this.nextElementSibling.classList.toggle('hide');
+  let activeId = activeLink.firstElementChild.id;
+  if (activeId == this.id) return;
+  activeLink.classList.toggle('is-active');
+  this.parentElement.classList.toggle('is-active');
+  document.querySelector(`section#${activeId}`).classList.toggle('is-hidden');
+  document.querySelector(`section#${this.id}`).classList.toggle('is-hidden');
+  setActiveLink();
 }
 
 document.addEventListener('DOMContentLoaded', main);
