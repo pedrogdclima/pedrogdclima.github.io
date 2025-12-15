@@ -31,7 +31,7 @@
     </section>
     <section id="projects" class="section is-hidden">
       <div class="container grid is-col-min-12 is-size-5">
-        <div class="cell card">
+        <div class="cell card" data-target="communitools">
           <div class="card-header">
             <p class="card-header-title is-centered">Communitools</p>
           </div>
@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-        <div class="cell card">
+        <div class="cell card" data-target="whereAreWe">
           <div class="card-header">
             <p class="card-header-title is-centered">Where Are We?</p>
           </div>
@@ -51,7 +51,7 @@
             </div>
           </div>
         </div>
-        <div class="cell card">
+        <div class="cell card" data-target="allRelated">
           <div class="card-header">
             <p class="card-header-title is-centered">All Related</p>
           </div>
@@ -61,7 +61,7 @@
             </div>
           </div>
         </div>
-        <div class="cell mb-5 card">
+        <div class="cell mb-5 card" data-target="personalWebsite">
           <div class="card-header">
             <p class="card-header-title is-centered">Personal Website</p>
           </div>
@@ -86,5 +86,22 @@
         <p>pedrogdcl@gmail.com</br>Toronto, ON, Canada</p>
       </div>
     </footer>
+    <div id="project-modal" class="modal">
+      <div class="modal-background">
+      </div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p id="project-title" class="modal-card-title">Project Title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div id="project-description" class="container">
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button><a id="project-link" href="/">Visit project</a></button>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>
