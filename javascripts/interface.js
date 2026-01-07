@@ -7,23 +7,23 @@ let modal;
 const ProjectData = {
   communitools: {
     title: "Communitools",
-    content: "Live soon!\nInspired by borrowing infrequently used tools from my neighbours, I decided to develop a platform where users can together create a neighbourhood tool library. Depending on what a constitutes 'nearby' to a user, they will see all of the tools their neighbours have and are willing to lend out.\nBuilt with: Rails, PostgreSQL, Devise, and Bootstrap",
-    link: 'link',
+    content: "<p>Live soon!</p><p>Inspired by borrowing infrequently used tools from my neighbours, I decided to develop a platform where users can together create a neighbourhood tool library. Depending on what a constitutes 'nearby' to a user, they will see all of the tools their neighbours have and are willing to lend out.</p><p>Built with: Rails, PostgreSQL, Devise, and Bootstrap</p>",
+    link: 'https://communitools.up.railway.app',
   },
   whereAreWe: {
     title: "Where Are We?",
-    content: "Project description",
+    content: "Project description comming soon!",
     link: false,
   },
   allRelated: {
     title: "All Related",
-    content: "Project description",
+    content: "Project description comming soon!",
     link: false,
   },
   personalWebsite: {
     title: "Personal Website",
-    content: "Project description",
-    link: 'link',
+    content: "This website! It serves to showcase my experience and my past, current, and future projects.",
+    link: '#',
   },
 }
 
@@ -69,12 +69,24 @@ function handleCardClick(event) {
 function updateModal(projectName) {
   const { title, content, link } = ProjectData[projectName];
   modal.querySelector('#project-title').textContent = title;
-  modal.querySelector('#project-description').textContent = content;
-  modal.querySelector('#project-link').textContent = link || 'Comming Soon!';
+  modal.querySelector('#project-description').insertAdjacentHTML('afterbegin', content);
+  let aElement = modal.querySelector('#project-link');
+  if (link) {
+    aElement.href = link;
+    aElement.textContent = 'Visit project';
+  }
 }
 
 function handleModalClick() {
   toggleModal();
+  resetModalData();
+}
+
+function resetModalData() {
+  modal.querySelector('#project-title').textContent = '';
+  modal.querySelector('#project-description').innerHTML = '';
+  modal.querySelector('#project-link').href = '#';
+  modal.querySelector('#project-link').textContent = 'Comming soon...';
 }
 
 function toggleModal() {
