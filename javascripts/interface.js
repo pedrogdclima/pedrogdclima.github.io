@@ -4,28 +4,7 @@ let activeLink;
 let projectCards;
 let modal;
 
-const ProjectData = {
-  communitools: {
-    title: "Communitools",
-    content: "<p>Live soon!</p><p>Inspired by borrowing infrequently used tools from my neighbours, I decided to develop a platform where users can together create a neighbourhood tool library. Depending on what a constitutes 'nearby' to a user, they will see all of the tools their neighbours have and are willing to lend out.</p><p>Built with: Rails, PostgreSQL, Devise, and Bootstrap</p>",
-    link: 'https://communitools.up.railway.app',
-  },
-  whereAreWe: {
-    title: "Where Are We?",
-    content: "Project description comming soon!",
-    link: false,
-  },
-  allRelated: {
-    title: "All Related",
-    content: "Project description comming soon!",
-    link: false,
-  },
-  personalWebsite: {
-    title: "Personal Website",
-    content: "This website! It serves to showcase my experience and my past, current, and future projects.",
-    link: '#',
-  },
-}
+import ProjectData from '../project_data.json' with { type: 'json' };
 
 function main() {
   sectionLinks = document.querySelectorAll('#tab-links a');
@@ -69,12 +48,17 @@ function handleCardClick(event) {
 function updateModal(projectName) {
   const { title, content, link } = ProjectData[projectName];
   modal.querySelector('#project-title').textContent = title;
-  modal.querySelector('#project-description').insertAdjacentHTML('afterbegin', content);
+  modal.querySelector('#project-description').insertAdjacentHTML('afterbegin', stringsToElements(content));
   let aElement = modal.querySelector('#project-link');
   if (link) {
     aElement.href = link;
     aElement.textContent = 'Visit project';
   }
+}
+
+function stringsToElements(content) {
+  return content.map( string => `<p>${string}</p>` )
+                .join('');
 }
 
 function handleModalClick() {
