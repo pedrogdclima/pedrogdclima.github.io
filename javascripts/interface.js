@@ -8,10 +8,33 @@ import ProjectData from '../project_data.json' with { type: 'json' };
 
 function main() {
   sectionLinks = document.querySelectorAll('#tab-links a');
-  projectCards = document.querySelectorAll('.card');
+  renderCards();
   modal = document.querySelector('#project-modal');
   setActiveLink();
   setupEventListeners();
+}
+
+function renderCards() {
+  const container = document.querySelector('.grid');
+  Object.entries(ProjectData).forEach( ([key, data]) => {
+    const newCard = document.createElement('div');
+    newCard.classList.add(['cell', 'card']);
+    newCard.setAttribute('data-target', key);
+
+    let cardHead = document.createElement('div')
+    let cardContent = document.createElement('div')
+    
+    cardHead.className = 'card-header';
+    cardContent.className = 'card-content';
+
+    cardHead.insertAdjacentHTML('afterbegin', "<p class='card-header-title is-centered'></p>");
+    cardContent.insertAdjacentHTML('afterbegin', "<div class='content'></div>");
+    
+    newCard.append(cardHead, cardContent);
+    container.append(newCard);
+  });
+
+  projectCards = document.querySelectorAll('.card');
 }
 
 function setActiveLink() {

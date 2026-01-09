@@ -1,7 +1,8 @@
 {
   "communitools": {
     "title": "Communitools",
-    "content": [
+    "cardContent": "A platform where users can signup, list tools they own and are willing to lend, and see what their neighbours have to offer. It uses a self reported location to determine which neighbours are nearby.",
+    "modalContent": [
         "Inspired by borrowing infrequently used tools from my neighbours, I decided to develop a platform where users can together create a neighbourhood tool library. Depending on what a constitutes 'nearby' to a user, they will see all of the tools their neighbours have and are willing to lend out.",
         "Built with: Rails, PostgreSQL, Devise, and Bootstrap"
     ],
@@ -9,20 +10,23 @@
   },
   "whereAreWe": {
     "title": "Where Are We?",
-    "content": ["Project description comming soon!"],
+    "cardContent": "Web-based map game where you have to guess the city/location from topological features like roads, rivers, shorelines, releif, etc. Currently in the brainstorming phase, researching the project's feasibility.",
+    "modalContent": ["Project description comming soon!"],
     "link": false
   },
   "allRelated": {
     "title": "All Related",
-    "content": ["Project description comming soon!"],
+    "cardContent": "Interactive photo album to display my wildlife photography and allow users to see how different species are more or less related to each other.",
+    "modalContent": ["Project description comming soon!"],
     "link": false
   },
   "personalWebsite": {
     "title": "Personal Website",
-    "content": [
+    "cardContent": "Simple website to showcase my work. Also an ongoing project I will use to improve my UI/UX design and try out different CSS frameworks.",
+    "modalContent": [
         "This website! It serves to showcase my experience and my past, current, and future projects.",
         "Built with: Github Pages and Bulma"
     ],
-    "link": "#"
+    "link": "https://pedrogdclima.github.io"
   }
 }
