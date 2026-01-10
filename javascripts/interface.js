@@ -13,22 +13,23 @@ function main() {
   setActiveLink();
   setupEventListeners();
 }
-
 function renderCards() {
   const container = document.querySelector('.grid');
   Object.entries(ProjectData).forEach( ([key, data]) => {
     const newCard = document.createElement('div');
-    newCard.classList.add(['cell', 'card']);
+    newCard.className = 'cell mb-5 card';
     newCard.setAttribute('data-target', key);
-
     let cardHead = document.createElement('div')
     let cardContent = document.createElement('div')
     
     cardHead.className = 'card-header';
     cardContent.className = 'card-content';
 
-    cardHead.insertAdjacentHTML('afterbegin', "<p class='card-header-title is-centered'></p>");
-    cardContent.insertAdjacentHTML('afterbegin', "<div class='content'></div>");
+    let cardHeadData = data.title;
+    let cardContentData = data.cardContent;
+    
+    cardHead.insertAdjacentHTML('afterbegin', `<p class='card-header-title is-centered'>${cardHeadData}</p>`);
+    cardContent.insertAdjacentHTML('afterbegin', `<div class='content'>${cardContentData}</div>`);
     
     newCard.append(cardHead, cardContent);
     container.append(newCard);
@@ -76,6 +77,8 @@ function updateModal(projectName) {
   if (link) {
     aElement.href = link;
     aElement.textContent = 'Visit project';
+  } else {
+    aElement.textContent = 'Comming soon...';
   }
 }
 
