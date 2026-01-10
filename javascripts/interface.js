@@ -70,9 +70,9 @@ function handleCardClick(event) {
 }
 
 function updateModal(projectName) {
-  const { title, content, link } = ProjectData[projectName];
+  const { title, modalContent, link } = ProjectData[projectName];
   modal.querySelector('#project-title').textContent = title;
-  modal.querySelector('#project-description').insertAdjacentHTML('afterbegin', stringsToElements(content));
+  modal.querySelector('#project-description').insertAdjacentHTML('afterbegin', stringsToElements(modalContent));
   let aElement = modal.querySelector('#project-link');
   if (link) {
     aElement.href = link;
