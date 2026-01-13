@@ -4,9 +4,15 @@
     "cardContent": "A platform where users can signup, list tools they own and are willing to lend, and see what their neighbours have to offer. It uses a self reported location to determine which neighbours are nearby.",
     "modalContent": [
         "Inspired by borrowing infrequently used tools from my neighbours, I decided to develop a platform where users can together create a neighbourhood tool library. Depending on what a constitutes 'nearby' to a user, they will see all of the tools their neighbours have and are willing to lend out.",
-        "Built with: Rails, PostgreSQL, Devise, and Bootstrap"
+        "Built with: Rails, PostgreSQL, Devise, Leaflet, Bootstrap, and Railway"
     ],
     "link": "https://communitools.up.railway.app"
+  },
+  "nextOne": {
+    "title": "Next One",
+    "cardContent": "Mobile app where users can save their favourite public transport stops to quickly see when the next bus or streetcar will arrive.",
+    "modalContent": ["Project description comming soon!"],
+    "link": false
   },
   "whereAreWe": {
     "title": "Where Are We?",
@@ -22,10 +28,10 @@
   },
   "personalWebsite": {
     "title": "Personal Website",
-    "cardContent": "Simple website to showcase my work. Also an ongoing project I will use to improve my UI/UX design and try out different CSS frameworks.",
+    "cardContent": "Website to showcase my work. Also an ongoing project I will use to improve my UI/UX design and try out different CSS frameworks.",
     "modalContent": [
         "This website! It serves to showcase my experience and my past, current, and future projects.",
-        "Built with: Github Pages and Bulma"
+        "Built with: Github Pages, and Bulma"
     ],
     "link": "https://pedrogdclima.github.io"
   }
