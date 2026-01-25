@@ -1,0 +1,23 @@
+// My variables
+$my-primary-color: hsl(216, 67%, 40%);
+
+@use "bulma/sass/utilities" with (
+  $primary: $my-primary-color,
+);
+
+@use "bulma/sass/base";
+@use "bulma/sass/themes";
+@use "bulma/sass/elements/button";
+@use "bulma/sass/elements/icon";
+@use "bulma/sass/elements/content";
+@use "bulma/sass/elements/title";
+@use "bulma/sass/grid";
+@use "bulma/sass/helpers";
+@use "bulma/sass/layout";
+@use "bulma/sass/components/tabs";
+@use "bulma/sass/components/modal";
+@use "bulma/sass/components/card" with (
+  $card-header-background-color: var(--bulma-primary-light),
+  $card-header-color: var(--bulma-primary-light-invert),
+  $card-header-shadow: var(--bulma-shadow),
+);
