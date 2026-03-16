@@ -26,6 +26,15 @@
     "modalContent": ["Project description comming soon!"],
     "link": false
   },
+  "weddingWebsite": {
+    "title": "Custom Wedding Website",
+    "cardContent": "Tailored wedding website for a couple who did not like any of the popular website products currently available. Built from scratch to match the clients needs.",
+    "modalContent": [
+      "The client had a number of particular needs and wishes that made the ready-made, wedding website platforms inviable. We setup a Rails backed application without ActiveRecord and used a Google spreadsheet own and managed by the client as a database. Additionally, internationalization was required since one of the spouse's family is non-English speaking.",
+      "Built with: Rails, Google Drive gem, Tailwind"
+    ],
+    "link": false
+  },
   "personalWebsite": {
     "title": "Personal Website",
     "cardContent": "Website to showcase my work. Also an ongoing project I will use to improve my UI/UX design and try out different CSS frameworks.",
