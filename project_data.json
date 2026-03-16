@@ -3,8 +3,8 @@
     "title": "Communitools",
     "cardContent": "A platform where users can signup, list tools they own and are willing to lend, and see what their neighbours have to offer. It uses a self reported location to determine which neighbours are nearby.",
     "modalContent": [
-        "Inspired by borrowing infrequently used tools from my neighbours, I decided to develop a platform where users can together create a neighbourhood tool library. Depending on what a constitutes 'nearby' to a user, they will see all of the tools their neighbours have and are willing to lend out.",
-        "Built with: Rails, PostgreSQL, Devise, Leaflet, Bootstrap, and Railway"
+        "Inspired by borrowing infrequently used tools from my neighbours, I developed a platform where users can together create a neighbourhood tool library. Depending on what a constitutes 'nearby' to a user, they will see all of the tools their neighbours are willing to lend out.",
+        "Built with: Rails, PostgreSQL, Devise, Leaflet, Tailwind, and Railway"
     ],
     "link": "https://communitools.up.railway.app"
   },
