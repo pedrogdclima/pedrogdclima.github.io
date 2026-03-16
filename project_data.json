@@ -39,7 +39,7 @@
     "title": "Personal Website",
     "cardContent": "Website to showcase my work. Also an ongoing project I will use to improve my UI/UX design and try out different CSS frameworks.",
     "modalContent": [
-        "This website! It serves to showcase my experience and my past, current, and future projects.",
+        "This website! It serves to showcase my past, current, and future projects.",
         "Built with: Github Pages, and Bulma"
     ],
     "link": "https://pedrogdclima.github.io"
