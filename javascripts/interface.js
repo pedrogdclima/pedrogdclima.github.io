@@ -88,6 +88,8 @@ function stringsToElements(content) {
 }
 
 function handleModalClick() {
+  if (event.target.id === 'project-link')
+    return;
   toggleModal();
   resetModalData();
 }
