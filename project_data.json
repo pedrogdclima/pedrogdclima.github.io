@@ -12,7 +12,7 @@
     "title": "Next One",
     "cardContent": "Mobile app where users can save their favourite public transport stops to quickly see when the next bus or streetcar will arrive.",
     "modalContent": ["Project description comming soon!"],
-    "link": false
+    "link": "https://next-one.up.railway.app/"
   },
   "whereAreWe": {
     "title": "Where Are We?",
