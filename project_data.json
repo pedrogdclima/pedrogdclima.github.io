@@ -1,4 +1,10 @@
 {
+  "nextOne": {
+    "title": "Next One",
+    "cardContent": "Web app where users can save their favourite public transport routes to quickly see where the next bus or streetcar is.",
+    "modalContent": ["Project description comming soon!"],
+    "link": "https://next-one.up.railway.app/"
+  },
   "communitools": {
     "title": "Communitools",
     "cardContent": "A platform where users can signup, list tools they own and are willing to lend, and see what their neighbours have to offer. It uses a self reported location to determine which neighbours are nearby.",
@@ -8,29 +14,23 @@
     ],
     "link": "https://communitools.up.railway.app"
   },
-  "nextOne": {
-    "title": "Next One",
-    "cardContent": "Mobile app where users can save their favourite public transport stops to quickly see when the next bus or streetcar will arrive.",
-    "modalContent": ["Project description comming soon!"],
-    "link": "https://next-one.up.railway.app/"
-  },
   "whereAreWe": {
     "title": "Where Are We?",
-    "cardContent": "Web-based map game where you have to guess the city/location from topological features like roads, rivers, shorelines, releif, etc. Currently in the brainstorming phase, researching the project's feasibility.",
+    "cardContent": "Web-based map game where you have to guess the city/location from topological features like roads, rivers, shorelines, releif, etc. Currently in ideation.",
     "modalContent": ["Project description comming soon!"],
     "link": false
   },
   "allRelated": {
     "title": "All Related",
-    "cardContent": "Interactive photo album to display my wildlife photography and allow users to see how different species are more or less related to each other.",
+    "cardContent": "Interactive photo album to display my wildlife photography and allow users to see how different species are more or less related to each other. Currently in ideation.",
     "modalContent": ["Project description comming soon!"],
     "link": false
   },
   "weddingWebsite": {
     "title": "Custom Wedding Website",
-    "cardContent": "Tailored wedding website for a couple who did not like any of the popular website products currently available. Built from scratch to match the clients needs.",
+    "cardContent": "Tailor-made wedding website for a couple who did not like any of the popular website products currently available. Built from scratch to match the clients specific needs.",
     "modalContent": [
-      "The client had a number of particular needs and wishes that made the ready-made, wedding website platforms inviable. We setup a Rails backed application without ActiveRecord and used a Google spreadsheet own and managed by the client as a database. Additionally, internationalization was required since one of the spouse's family is non-English speaking.",
+      "The couple needed features not offered by any of the popular wedding website services. We setup a Rails application without ActiveRecord and used a Google spreadsheet owned and managed by the client as a database. Additionally, internationalization was required since one of the spouse's family does not speak english.",
       "Built with: Rails, Google Drive gem, Tailwind"
     ],
     "link": false
