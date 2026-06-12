@@ -16,7 +16,8 @@
     "cardContent": "A platform where users can signup, list tools they own and are willing to lend, and see what their neighbours have to offer. It uses a self reported location to determine which neighbours are nearby.",
     "modalContent": [
         "Inspired by borrowing infrequently used tools from my neighbours, I developed a platform where users can together create a neighbourhood tool library. Depending on what a constitutes 'nearby' to a user, they will see all of the tools their neighbours are willing to lend out.",
-        "Built with: Rails, PostgreSQL, Devise, Leaflet, Tailwind, and Railway"
+        "</br>",
+        "Built with: Rails, PostgreSQL, Devise, Hotwire, Leaflet, Tailwind, and Railway"
     ],
     "link": "https://communitools.up.railway.app"
   },
@@ -37,6 +38,7 @@
     "cardContent": "Tailor-made wedding website for a couple who did not like any of the popular website products currently available. Built from scratch to match the clients specific needs.",
     "modalContent": [
       "The couple needed features not offered by any of the popular wedding website services. We setup a Rails application without ActiveRecord and used a Google spreadsheet owned and managed by the client as a database. Additionally, internationalization was required since one of the spouse's family does not speak english.",
+      "</br>",
       "Built with: Rails, Google Drive gem, Tailwind"
     ],
     "link": false
@@ -46,7 +48,8 @@
     "cardContent": "Website to showcase my work. Also an ongoing project I will use to improve my UI/UX design and try out different CSS frameworks.",
     "modalContent": [
         "This website! It serves to showcase my past, current, and future projects.",
-        "Built with: Github Pages, and Bulma"
+        "</br>",
+        "Built with: Github Pages and Bulma"
     ],
     "link": "https://pedrogdclima.github.io"
   }
