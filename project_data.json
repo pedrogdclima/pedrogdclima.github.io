@@ -1,8 +1,14 @@
 {
   "nextOne": {
-    "title": "Next One",
+    "title": "Next-One",
     "cardContent": "Web app where users can save their favourite public transport routes to quickly see where the next bus or streetcar is.",
-    "modalContent": ["Project description comming soon!"],
+    "modalContent": [
+      "I wanted an app where I could quickly see where the next bus or streetcar is. While you can do that on existing apps like Google Maps and Transit, you either have to download the app or need to zoom in to a stop and click it to see the vehicles. That disatisfaction and the overlap of many of my interests led me to build Next-One.",
+      "</br>",
+      "Built with: Rails, SQLite, Hotwire, Leaflet, Tailwind, and Railway",
+      "</br>",
+      "I wrote a blog post about building the app: <a href='./next-one.html'>Builing Next-One</a>"
+    ],
     "link": "https://next-one.up.railway.app/"
   },
   "communitools": {
