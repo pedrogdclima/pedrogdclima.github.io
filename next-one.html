@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>pedrogdclima</title>
+        <link rel="stylesheet" href="custom_bulma.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    <body>
+        <div class="section">
+            <div class="container is-max-desktop">
+                <div class="title is-1 mt-6 mb-2">Building Next-One</div>
+                <div class="subtitle">How I built and what I learned from building a web add for quickly seeing where is the next bus or streetcar</div>
+                <div class="">Live application: <a href="https://next-one.up.railway.app/">next-one.up.railway.app</a></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container is-max-desktop">
+                <div class="content">
+                    <h2>Introduction</h2>
+                    <p>I wanted an app where I could quickly see where the next bus or streetcar is. While you can do that on Google Maps, you need to zoom in to where a stop is and then click it to see it. Transit App does what I described but requires you to download the app. I wanted to build this app because it combines so many of my interests: web mapping, public transit, and full-stack software development.</p>
+                    <figure class="side-by-side my-6">
+                        <div class="image-item">
+                            <img src="./images/screenshot_1.png" width="400">
+                            <figcaption><i>Home page / All routes</i></figcaption>
+                        </div>
+                        <div class="image-item">
+                            <img src="./images/screenshot_2.png" width="400">
+                            <figcaption><i>Route page / Vehicles on route</i></figcaption>
+                        </div>
+                    </figure>
+                    <p>Thankfully, Toronto’s public transit agency, the TTC, makes their transit data available to the public using the GTFS data format. Below you’ll find a short glossary of terms specific to the dataset used to build Next-One.</p>
+                    <h6>Glossary</h6>
+                    <table>
+                        <tr>
+                            <td>GTFS</td>
+                            <td>General Transit Feed Specification</td>
+                        </tr>
+                        <tr>
+                            <td>GTFS-RT</td>
+                            <td>General Transit Feed Specification Realtime</td>
+                        </tr>
+                        <tr>
+                            <td>Rotues</td>
+                            <td>A group of trips displayed to riders as a single service</td>
+                        </tr>
+                        <tr>
+                            <td>Trips</td>
+                            <td>A sequence of 2 or more stops that occur during a specified time</td>
+                        </tr>
+                        <tr>
+                            <td>Shapes</td>
+                            <td>Spatial features (points, lines, polygons) representing the vehicle’s routing</td>
+                        </tr>
+                    </table>
+                    <h2>Tech Stack</h2>
+                    <h6>Frontend - Hotwire (Turbo & Stimulus), Tailwind, Leaflet.js</h6>
+                    <ul>
+                        <li>Tailwind’s utility classes make CSS quick and easy to prototype and develop.</li>
+                        <li>Hotwire is packaged with Rails and creates a Single Page Application experience without relying on a bunch of code being executed client-side.</li>
+                    </ul>
+                    <h6>Backend - Rails</h6>
+                    <ul>
+                        <li>Ruby on Rails makes it easy to quickly develop and deploy web apps.</li>
+                    </ul>
+                    <h6>Database - SQLite</h6>
+                    <ul>
+                        <li>Default on Rails applications, SQLite is more than capable of handling this project’s needs and is serverless.</li>
+                    </ul>
+                    <h6>Infra - Railway, GitHub</h6>
+                    <ul>
+                        <li>Railway is both affordable and makes deployment and observability a breeze.</li>
+                        <li>GitHub for CI/CD and version control.</li>
+                    </ul>
+                    <h2>Architecture</h2>
+                    <p>In the diagram below you can see how the app handles requests from the browser.</p>
+                    <figure>
+                        <img src="./images/flowchart.png" width="650">
+                    </figure>
+                    <p>There are two sources of data: the database, and the TTC API. Both sources are produced by the TTC and provide related but different types of GTFS data. The data stored in the database is static Schedule data while the data provided by the API is rRealtime data.
+                    <p>The Schedule data represents the planned (scheduled) service that is decided ahead of time. This data is published every three weeks and contains all of the existing routes, their scheduled trips, stops, and the spatial data describing each trip. This static data describes what the TTC plans to operate during the defined time period. A few days before the next time period starts, the TTC publishes a new batch of Schedule data. Next-One confirms there is a new Schedule dataset, downloads the zipped folder containing a number of CSV files, and processes the CSV rows into the SQLite database using ActiveRecord.</p>
+                    <p>The Realtime data is fetched by the application when a user requests information about a specific route, namely the vehicles currently on trips belonging to the route. The routes controller calls the TTC API which returns a feed of the latest vehicle positions. That feed is processed and the data is stored in- memory. This data becomes stale within a few seconds, so storing it in the database would be unnecessary, as there is no use case requiring us to retrieve it later.</p>
+                    <p>With scalabilityefficiency in mind, before processing the fetched feed the application checks the time stamp on the data. whether the feed has the same timestamp as the previous and already processed feed. If they have the newsame timestamp matches the timestamp of the data already stored in-memory, the application skips the processing step and returnssends the browser the vehicle information already in memory.</p>
+                    <p>Linking the realtime data to the static data happens via foreign keys. Each vehicle contains the ID of the route, trip, and stop it is on (or approaching). You can see the relationships between the different entities in the schema below. While the  vehicle data isn’t stored in the database, and so isn’t actually in the application’s database schema, I added it to the diagram below to show the relationships between the realtime and static data.</p>
+                    <figure>
+                        <img src="./images/schema.svg" width="650">
+                    </figure>
+                    <h2>The Build Process and Lessons Learned</h2>
+                    <p>Next-One’s build process was fueled by curiosity and excitement. While I spent some time planning the steps required to deploy the original MVP, I spent more time than needed learning about tools and GTFS details. Additionally, I want to develop a better sense for identifying the problems where it makes sense to go with the first solution I come to vs the problems that are worth spending time understanding and brainstorming.</p>
+                    <p>At first I built the UI with a desktop screen in mind and, as expected, had to later redo a lot of styling to achieve a harmonious and intuitive responsive UI for mobile screen. Next time I’ll stick to Tailwind’s recommended mobile-first development. Even if I still still prefer browsing the web on my computer, an ever increasing number of users seem to prefer the mobile experience. Given that, all websites and web apps should be developed with mobile use in mind. Next time I’ll make sure to abide by Tailwind’s convention of mobile-first development.</p>
+                    <p>AI assisted development is a skill I and many other devs are still honing. While working on this project I noticed a few times that it would have been faster to prompt Claude for some boilerplate code. While a lot of the frontend code was written by Claude, I did notice that it used an overly complex pattern to achieve a relatively simple feature. I believe Claude does well when it is asked to solve a specific problem; prompts should contain relevant context and details on what not to do and what to optimize for.</p>
+                    <h2>What's Next</h2>
+                    <ul>
+                        <li>
+                            Incorporate Alert Feed</br>
+                            <em>The Alert Feed contains scheduled and realtime information on alterations and disruptions to routes.</em>
+                        </li>
+                        <li>
+                            Incorporate Trip Update Feed</br>
+                            <em>The Trip Update Feed is used to update the scheduled vehicle departures with the most recent predictions given traffic and service disruptions.</em>
+                        </li>
+                        <li>
+                            Create PWA version</br>
+                            <em>A Progrssive Web App would could provide push notifications and superior user experience.</em>
+                        </li>
+                        <li>
+                            Investigate feasibility for adding other cities</br>
+                            <em>In theory the app should work with any transit agency thats uses the GTFS standard.</em>
+                        </li>
+                    </ul>
+                    <h2>Conclusion</h2>
+                    <p>My main takeaway is that spending more time upfront planning is worth the investment. Breaking down the required work into small steps allows us to get incrementally closer to the MVP, resulting in quicker delivery and a smoother rollout. It is too easy to get excited about a new idea for a feature, or jump around trying to work on different parts of the project.</p>
+                    <p>I truly enjoyed building Next-One and am looking forward to starting my next project and applying all of the valuable lessons I learned.</p>
+                </div>
+            </div>
+        </div>
+        <footer class="footer has-text-centered">
+            <div class="container layer">
+            <button class="icon is-large">
+                <a href="https://linkedin.com/in/pedro-gdc-lima"><i class="fab fa-linkedin fa-2x"></i></a>
+            </button>
+            <button class="icon is-large">
+                <a href="https://github.com/pedrogdclima"><i class="fab fa-github-square fa-2x"></i></a>
+            </button>
+            </div>
+            <div class="content">
+            <p>pedrogdcl@gmail.com</br>Toronto, ON, Canada</p>
+            </div>
+        </footer>
+    </body>
+</html>
