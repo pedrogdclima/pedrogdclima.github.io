@@ -296,6 +296,32 @@ table th {
     transform: rotate(359deg);
   }
 }
+/* Side-by-side image gallery */
+figure.side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+figure.side-by-side .image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+figure.side-by-side .image-item img {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  figure.side-by-side {
+    flex-direction: column;
+  }
+}
+
 @keyframes pulsate {
   50% {
     opacity: 0.5;
