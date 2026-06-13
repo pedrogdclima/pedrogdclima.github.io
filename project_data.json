@@ -7,7 +7,7 @@
       "</br>",
       "Built with: Rails, SQLite, Hotwire, Leaflet, Tailwind, and Railway",
       "</br>",
-      "I wrote a blog post about building the app: <a href='./next-one.html'>Builing Next-One</a>"
+      "Read more about how I built it here: <a href='./next-one.html'>Builing Next-One</a>"
     ],
     "link": "https://next-one.up.railway.app/"
   },
