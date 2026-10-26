@@ -88,7 +88,7 @@ function stringsToElements(content) {
 }
 
 function handleModalClick() {
-  if (event.target.id === 'project-link')
+  if (event.target.className !== 'modal-background')
     return;
   toggleModal();
   resetModalData();
