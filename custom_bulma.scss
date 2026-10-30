@@ -11,6 +11,7 @@ $my-primary-color: hsl(216, 67%, 40%);
 @use "node_modules/bulma/sass/elements/icon";
 @use "node_modules/bulma/sass/elements/content";
 @use "node_modules/bulma/sass/elements/title";
+@use "node_modules/bulma/sass/elements/image";
 @use "node_modules/bulma/sass/grid";
 @use "node_modules/bulma/sass/helpers";
 @use "node_modules/bulma/sass/layout";
@@ -27,4 +28,8 @@ $my-primary-color: hsl(216, 67%, 40%);
 
 .modal-card-title {
   font-weight: var(--bulma-weight-bold),
+}
+
+img {
+  border-radius: var(--bulma-radius-large);
 }

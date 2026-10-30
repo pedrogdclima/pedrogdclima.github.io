@@ -39,7 +39,10 @@
     "modalContent": [
       "The couple needed features not offered by any of the popular wedding website services. We setup a Rails application without ActiveRecord and used a Google spreadsheet owned and managed by the client as a database. Additionally, internationalization was required since one of the spouse's family does not speak english.",
       "</br>",
-      "Built with: Rails, Google Drive gem, Tailwind"
+      "Built with: Rails, Google Drive gem, Tailwind",
+      "<figure class='image mt-5'><img src='images/screenshot-wedding-website-rsvp.png'/>Guest's RSVP form</figure>",
+      "<figure class='image mt-5'><img src='images/screenshot-wedding-website-admin.png'/>Couple's admin dashboard</figure>",
+      "<figure class='image mt-5'><img src='images/screenshot-wedding-website-i18n.png'/>Internalization</figure>"
     ],
     "link": false
   },
