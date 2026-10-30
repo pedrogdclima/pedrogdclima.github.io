@@ -1,23 +1,30 @@
 // My variables
 $my-primary-color: hsl(216, 67%, 40%);
 
-@use "bulma/sass/utilities" with (
+@use "node_modules/bulma/sass/utilities" with (
   $primary: $my-primary-color,
 );
 
-@use "bulma/sass/base";
-@use "bulma/sass/themes";
-@use "bulma/sass/elements/button";
-@use "bulma/sass/elements/icon";
-@use "bulma/sass/elements/content";
-@use "bulma/sass/elements/title";
-@use "bulma/sass/grid";
-@use "bulma/sass/helpers";
-@use "bulma/sass/layout";
-@use "bulma/sass/components/tabs";
-@use "bulma/sass/components/modal";
-@use "bulma/sass/components/card" with (
+@use "node_modules/bulma/sass/base";
+@use "node_modules/bulma/sass/themes";
+@use "node_modules/bulma/sass/elements/button";
+@use "node_modules/bulma/sass/elements/icon";
+@use "node_modules/bulma/sass/elements/content";
+@use "node_modules/bulma/sass/elements/title";
+@use "node_modules/bulma/sass/grid";
+@use "node_modules/bulma/sass/helpers";
+@use "node_modules/bulma/sass/layout";
+@use "node_modules/bulma/sass/components/tabs";
+@use "node_modules/bulma/sass/components/modal" with (
+  $modal-card-head-background-color: var(--bulma-primary-light),
+  $modal-card-title-color: var(--bulma-primary-light-invert),
+);
+@use "node_modules/bulma/sass/components/card" with (
   $card-header-background-color: var(--bulma-primary-light),
   $card-header-color: var(--bulma-primary-light-invert),
   $card-header-shadow: var(--bulma-shadow),
 );
+
+.modal-card-title {
+  font-weight: var(--bulma-weight-bold),
+}
