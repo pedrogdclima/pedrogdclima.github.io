@@ -17,7 +17,7 @@ function renderCards() {
   const container = document.querySelector('.grid');
   Object.entries(ProjectData).forEach( ([key, data]) => {
     const newCard = document.createElement('div');
-    newCard.className = 'cell mb-5 card';
+    newCard.className = 'cell mb-5 card is-clickable';
     newCard.setAttribute('data-target', key);
     let cardHead = document.createElement('div')
     let cardContent = document.createElement('div')
@@ -79,6 +79,7 @@ function updateModal(projectName) {
     aElement.textContent = 'Visit project';
   } else {
     aElement.textContent = 'Comming soon...';
+    aElement.classList.add('is-hidden');
   }
 }
 
@@ -99,6 +100,7 @@ function resetModalData() {
   modal.querySelector('#project-description').innerHTML = '';
   modal.querySelector('#project-link').href = '#';
   modal.querySelector('#project-link').textContent = 'Comming soon...';
+  modal.querySelector('#project-link').classList.remove('is-hidden');
 }
 
 function toggleModal() {
